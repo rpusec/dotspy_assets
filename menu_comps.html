@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Menu components demo</title>
+		<script src="https://code.createjs.com/easeljs-0.8.0.min.js"></script>
+		<script type="text/javascript" src="js/MFTabButton.js"></script>
+		<script type="text/javascript" src="js/MenuPanel.js"></script>
+		<script type="text/javascript" src="js/MenuFrame.js"></script>
+		<script type="text/javascript" src="js/MenuParticle.js"></script>
+		<script type="text/javascript">
+
+			var stages = {};
+
+			function init(){
+				//creating three stages (canvases)
+				stages.particleStage = new createjs.Stage('particleStage');
+				stages.menuPanelStage = new createjs.Stage('menuPanelStage');
+				stages.menuFrameStage = new createjs.Stage('menuFrameStage');
+
+				//enables mouse over on all stages
+				for(var s in stages)
+					stages[s].enableMouseOver(10);
+
+				createjs.Ticker.setFPS(30);
+				createjs.Ticker.addEventListener('tick', function(){
+					//updates all stages
+					for(var s in stages)
+						stages[s].update();
+				});
+			}
+
+			var particle = null, panel = null, frame = null;
+
+			/**
+			 * Displays a single particle on the appropraite canvas. 
+			 */
+			function showParticle(){
+				if(particle == null)
+				{
+					particle = new MenuParticle(new createjs.Point(stages.particleStage.canvas.width/2, stages.particleStage.canvas.height/2), 50, 50, getRandColor(), 100, 100, 0.5, null, 0, 1.05);
+					stages.particleStage.addChild(particle);
+				}
+				else
+				{
+					particle.blowUp();
+					particle = null;
+				}
+			}
+
+			/**
+			 * Displays a menu panel on the appropriate canvas. 
+			 */
+			function showPanel(){
+				if(panel == null)
+				{
+					var colors = [];
+
+					for(var i = 0; i < 9; i++)
+						colors.push(getRandColor());
+
+					panel = new MenuPanel(new createjs.Point(stages.particleStage.canvas.width/2, stages.particleStage.canvas.height/2), 100, 100, 3, 3, colors, 100, 250, 0.5, null, 0, 1.05);
+					panel.x -= panel.getBounds().width/2;
+					panel.y -= panel.getBounds().height/2;
+					stages.menuPanelStage.addChild(panel);
+				}
+				else
+				{
+					panel.blowUp();
+					panel = null;
+				}
+			}
+
+			/**
+			 * Displays a menu frame on an appropriate canvas. 
+			 */
+			function showFrame(){
+				if(frame == null || frame.getBlownUp())
+				{
+					var colors = ['#66E0C2', '#66E0C2', '#66E0C2', '#85E6CE', '#B6F0E2', '#B6F0E2', '#B6F0E2', '#B6F0E2', '#B2FFF0', '#B2FFF0', '#B2FFF0', '#D8FFF8'];
+
+					frame = new MenuFrame([
+						{
+							content: ['first sentence of first tab', 'second sentence first tab', 'third sentence first tab'],
+							tabName: 'First tab'
+						}, {
+							content: ['first sentence second tab', 'second sentence second tab', 'third sentence second tab'],
+							tabName: 'Second tab'
+						}
+					], 'Title of the frame', 20, {width: 200, height: 200, xAmount: 5, yAmount: 5, color: colors, rotationAmount: 100, appearDelay: 0, mpAlpha: 0.8, borderColor: "#000", strokeStyle: 0, rotationDecrAmount: 1.05, topRailColor: '#00B893', border: '#004034'},
+						{defaultColor: "#008F6B", onHoverColor: "#00E6B8", activeColor: "#fff", openedColor: "#B2FFF0", borderColor: "#004034", textColor: "#fff", contentColor: '#008F6B'});
+
+					frame.x = stages.menuFrameStage.canvas.width/2 - frame.getBounds().width/2;
+					frame.y = stages.menuFrameStage.canvas.height/2 - frame.getBounds().height/2;
+
+					stages.menuFrameStage.addChild(frame);
+				}
+				else
+				{
+					frame.blowUp();
+					frame = null;
+				}
+			}
+
+			/**
+			 * Returns a random color. 
+			 * @return {String} Random color in a rgb(R,G,B) format. 
+			 */
+			function getRandColor(){
+				return 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
+			}
+
+		</script>
+	</head>
+	<body onload="init()">
+		<table>
+			<tr>
+				<td><input type="button" onclick="showParticle()" value="Show particle" /></td>
+			</tr>
+			<tr>
+				<td><canvas id="particleStage" width="300" height="300"></canvas></td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="showPanel()" value="Show particles" /></td>
+			</tr>
+			<tr>
+				<td><canvas id="menuPanelStage" width="300" height="300"></canvas></td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="showFrame()" value="Show frame" /></td>
+			</tr>
+			<tr>
+				<td><canvas id="menuFrameStage" width="400" height="400"></canvas></td>
+			</tr>
+		</table>
+	</body>
+</html>

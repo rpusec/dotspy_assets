@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DisplayImage demo</title>
+		<script src="https://code.createjs.com/easeljs-0.8.0.min.js"></script>
+		<script src="https://code.createjs.com/preloadjs-0.6.0.min.js"></script>
+		<script type="text/javascript" src="js/MenuOptionDisplayImg.js"></script>
+		<script type="text/javascript">
+
+			var menuOptionDisplImg,
+				imageTitles = ['help', 'specialthanks', 'startgame', 'tutorial'], 
+				texts = ['the help section', 'special thanks section', 'start the game', 'start tutorial'], //the text that will appear below each image
+				queue;
+
+			function init(){
+
+				var manifest = [];
+
+				//setting up manifest
+				imageTitles.forEach(function(img){
+					manifest.push({id: img, src: 'imgs/' + img + '.png'});
+				});
+
+				manifest.push({id: 'annoyance', src: 'imgs/annoyance.png'});
+
+				//setting up preloader to preload images
+				queue = new createjs.LoadQueue(true);
+				queue.on('complete', handleComplete);
+				queue.loadManifest(manifest);
+			}
+
+			function handleComplete(){
+				stage = new createjs.Stage("gameStage");
+
+				stage.canvas.style.backgroundColor = "#000";
+
+				stage.addChild(new createjs.Text('The images are automatically switching every 5 seconds. ', '14px Arial', '#fff'));
+
+				var images = [];
+
+				//prepares the images
+				imageTitles.forEach(function(img){
+					images.push(new createjs.Bitmap(queue.getResult(img).src));
+				});
+
+				menuOptionDisplImg = new MenuOptionDisplayImg(images, texts, new createjs.SpriteSheet({
+					"images": [queue.getResult('annoyance').src],
+					"frames": {"regX": 0, "regY": 0, "width": 100, "height": 100, "count": 4}
+				}));
+
+				menuOptionDisplImg.x = stage.canvas.width/2;
+				menuOptionDisplImg.y = stage.canvas.height/4;
+
+				stage.addChild(menuOptionDisplImg);
+				menuOptionDisplImg.displayImage(0); //immediately displays the first image
+
+				createjs.Ticker.setFPS(30);
+				createjs.Ticker.addEventListener('tick', function(){
+					stage.update();
+				});
+
+				var imgCount = 1;
+
+				//will loop through the images
+				setInterval(function(){
+					if(imgCount !== menuOptionDisplImg.getImages().length)
+					{
+						menuOptionDisplImg.displayImage(imgCount);
+						imgCount++;
+					}
+					else
+						imgCount = 0;
+				}, 5000);
+			}
+
+		</script>
+	</head>
+	<body onload="init()">
+		<canvas id="gameStage" width="500" height="500"></canvas>
+	</body>
+</html>

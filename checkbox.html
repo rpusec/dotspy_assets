@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Checkboxes demo</title>
+		<script src="https://code.createjs.com/easeljs-0.8.0.min.js"></script>
+		<script type="text/javascript" src="js/CheckBox.js"></script>
+		<script type="text/javascript">
+
+			var checkbox,
+				stage;
+
+			function init(){
+				stage = new createjs.Stage("gameStage");
+
+				stage.canvas.style.backgroundColor = "#000";
+
+				stage.enableMouseOver(10);
+
+				checkbox = new CheckBox("Set random background", function(){
+					//sets a randomly colored background when checked
+					document.getElementsByTagName('body')[0].style.backgroundColor = getRandColor(); 
+				}, function(){
+					//resets back to white when the box is unchecked
+					document.getElementsByTagName('body')[0].style.backgroundColor = "#FFF";
+				}, {checked: false,
+					bgColor: '#66FFCC',
+					borderColor: '#00CC99',
+					textColor: '#fff',
+					bgColorHover: '#66CCFF',
+					borderColorHover: '#3399FF',
+					textColorHover: '#00CCFF'
+				});
+
+				checkbox.x = 20;
+				checkbox.y = 20;
+
+				stage.addChild(checkbox);
+
+				createjs.Ticker.setFPS(30);
+				createjs.Ticker.addEventListener('tick', function(){
+					stage.update();
+				});
+
+				function getRandColor(){
+					return 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
+				}
+			}
+
+		</script>
+	</head>
+	<body onload="init()">
+		<canvas id="gameStage" width="300" height="100"></canvas>
+	</body>
+</html>

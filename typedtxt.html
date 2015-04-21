@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TypedTexts demo</title>
+		<script src="https://code.createjs.com/easeljs-0.8.0.min.js"></script>
+		<script type="text/javascript" src="js/TypedText.js"></script>
+		<script type="text/javascript">
+
+			if(typeof Math.randomInt === 'undefined')
+			{
+				Math.randomInt = function(min, max)
+				{
+					return Math.floor(Math.random()*(max-min+1)+min);
+				}
+			}
+
+			var stage;
+
+			function init(){
+				stage = new createjs.Stage("gameStage");
+
+				createjs.Ticker.setFPS(30);
+				createjs.Ticker.addEventListener('tick', function(){
+					stage.update();
+				});
+			}
+
+			var displTxt = null;
+
+			/**
+			 * Adds a TypedText object to the stage. 
+			 */
+			function addText(){
+				if(displTxt === null)
+				{
+					displTxt = new TypedText(new createjs.Point(stage.canvas.width/2, stage.canvas.height/2), "This is an example of a typed text. ", Math.randomInt(20, 30), getRandColor(), "Arial", Math.randomInt(5, 10), Math.randomInt(200, 250), Math.randomInt(20, 50));
+					displTxt.x -= displTxt.getBounds().width/2;
+					displTxt.y -= displTxt.getBounds().height/2;
+					stage.addChild(displTxt);
+				}
+				else
+				{
+					displTxt.deleteText();
+					displTxt = null;
+				}
+			}
+
+			/**
+			 * Returns a random color. 
+			 * @return {String} Random color in a rgb(R,G,B) format. 
+			 */
+			function getRandColor(){
+				return 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
+			}
+
+		</script>
+	</head>
+	<body onload="init()">
+		<input type="button" onclick="addText()" value="type text in / remove text" /><br />
+		<canvas id="gameStage" width="500" height="100"></canvas>
+	</body>
+</html>

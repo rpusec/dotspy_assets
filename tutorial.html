@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TypedTexts demo</title>
+		<script src="https://code.createjs.com/easeljs-0.8.0.min.js"></script>
+		<script type="text/javascript" src="js/MenuParticle.js"></script>
+		<script type="text/javascript" src="js/MenuPanel.js"></script>
+		<script type="text/javascript" src="js/Tutorial.js"></script>
+		<script type="text/javascript" src="js/TutorialFactory.js"></script>
+		<script type="text/javascript">
+
+			if(typeof Math.randomInt === 'undefined')
+			{
+				Math.randomInt = function(min, max)
+				{
+					return Math.floor(Math.random()*(max-min+1)+min);
+				}
+			}
+
+			var stage, tutorialFactory, tutorialPreparedTxt;
+
+			function init(){
+				stage = new createjs.Stage("gameStage");
+
+				stage.enableMouseOver(10);
+
+				stage.canvas.style.border = "1px solid #000";
+				stage.canvas.style.backgroundColor = "#0099FF";
+
+				tutorialFactory = new TutorialFactory(stage);
+				tutorialFactory.setTutorialMode(true); //sets the tutorial mode to true, false is used in dotspy itself
+
+				/*
+					TutorialFactory.setNewTutorial creates a new tutorial 
+					and saves it in application memory for later use. 
+				*/
+				tutorialFactory.setNewTutorial('tut_no_1', 'Aliquam id nibh ullamcorper, porttitor purus id, ornare urna. Nullam enim nibh, suscipit gravida tristique nec, tincidunt in orci.');
+				tutorialFactory.setNewTutorial('tut_no_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+				tutorialFactory.setNewTutorial('tut_no_3', 'Maecenas interdum condimentum dolor non viverra. Curabitur eu lectus nibh.');
+				tutorialFactory.setNewTutorial('tut_no_4', 'Vivamus hendrerit tincidunt erat, et imperdiet libero tempor et. Fusce gravida lectus vel malesuada malesuada.');
+				tutorialFactory.setNewTutorial('tut_no_5', 'Curabitur iaculis non libero quis dapibus.');
+				tutorialFactory.setNewTutorial('tut_no_6', 'Nullam pretium ante ut lorem vulputate, vel elementum lacus porta.');
+
+				//TFTL stands for Tutorial Factory Tutorial List
+				//it displays a list of tutorials and the user can see
+				//which tutorials had already been displayed in the game
+				tutorialFactory.createTFTL();
+				tutorialFactory.updateTFTL();
+
+				stage.addChild(tutorialFactory.getTFTL());
+
+				tutorialPreparedTxt = new createjs.Text('No tutorials prepared yet...', '12px Arial', '#fff');
+				stage.addChild(tutorialPreparedTxt);
+				tutorialPreparedTxt.y = tutorialFactory.getTFTL().getBounds().height;
+
+				createjs.Ticker.setFPS(30);
+				createjs.Ticker.addEventListener('tick', function(){
+					stage.update();
+				});
+			}
+
+			var displTxt = null;
+
+			/**
+			 * Prepares a tutorial for use. 
+			 * @param  {Integer} which Which tutorial. In this example, we would use an iteger from 1 to 6. 
+			 */
+			function prepTutorial(which){
+				if(tutorialFactory.prepareTutorial('tut_no_' + which))
+					tutorialPreparedTxt.text = 'Prepared tutorial no #' + which;
+				else
+					tutorialPreparedTxt.text = 'Tutorial #' + which + ' was already used, preloaded, or doesn\'t exist. ';
+			}
+
+			/**
+			 * Loads the next prepared tutorial. 
+			 */
+			function loadTutorials(){
+				tutorialFactory.loadNext();
+			}
+
+			/**
+			 * Returns a random color. 
+			 * @return {String} Random color in a rgb(R,G,B) format. 
+			 */
+			function getRandColor(){
+				return 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
+			}
+
+		</script>
+	</head>
+	<body onload="init()">
+		<input type="button" onclick="prepTutorial(1)" value="prepare tutorial #1" />
+		<input type="button" onclick="prepTutorial(2)" value="prepare tutorial #2" />
+		<input type="button" onclick="prepTutorial(3)" value="prepare tutorial #3" /><br />
+		<input type="button" onclick="prepTutorial(4)" value="prepare tutorial #4" />
+		<input type="button" onclick="prepTutorial(5)" value="prepare tutorial #5" />
+		<input type="button" onclick="prepTutorial(6)" value="prepare tutorial #6" /><br />
+		<input type="button" onclick="loadTutorials()" value="Load next tutorial" /><br />
+		<canvas id="gameStage" width="700" height="300"></canvas>
+	</body>
+</html>
