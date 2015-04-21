@@ -8,9 +8,7 @@ if(typeof Math.randomInt === 'undefined')
 
 (function(){
 	/**
-	 *	Certain components of menus are made up of 
-	 *	square-shaped rotating particles. This class creates
-	 * 	such an individual particle. 
+	 *	Represents an animated "block" of a menu panel. 
 	 *	@param {createjs.Point} point 		The coordinates of the particle.
 	 *	@param {Integer} width				The width of the particle. 
 	 *	@param {Integer} height				The height of the particle.

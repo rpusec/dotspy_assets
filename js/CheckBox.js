@@ -1,7 +1,6 @@
 (function(){
 	/**
-	 * CheckBox is a small button with a label 
-	 * that can be activated when clicked.
+	 * CheckBox is a small button with a label that can be activated when clicked.
 	 * @param {String} strLabel The label of the given CheckBox.
 	 * @param {Function} onCheck Function that's executed when the CheckBox is checked. 
 	 * @param {Function} onUnCheck Function that is executed when the CheckBox is unchecked. 

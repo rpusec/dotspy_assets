@@ -1,8 +1,7 @@
 (function(){
 	/**
 	 * These buttons are specifically used as "tab links" on MenuFrames. 
-	 * They also contain the content to be displayed when clicked on a 
-	 * specific tab. 
+	 * They also contain the content of a MenuFrame to be displayed when clicked.
 	 * @param {Integer} buttonType    What type of the button should it be, can be a TAB_BUTTON or an EXIT_BUTTON. 
 	 * @param {[type]} menuFrame      The MenuFrame in which this button is displayed. 
 	 * @param {[type]} displayTxt     The text to be displayed on the button. 
@@ -19,6 +18,7 @@
 	 *                                (Check the MenuFrame documentation for more info)
 	 * @param {[type]} textLineHeight The additional line height of the text. 
 	 * @author Roman Pusec
+	 * @see MenuFrame
 	 * @augments {createjs.Container}
 	 */
 	function MFTabButton(buttonType, menuFrame, displayTxt, defaultColor, onHoverColor, activeColor, openedColor, borderColor, textColor, width, height, arrContent, contentColor, textLineHeight){

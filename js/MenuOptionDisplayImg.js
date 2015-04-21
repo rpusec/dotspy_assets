@@ -1,8 +1,7 @@
 (function(){
 	/**
-	 *	This display object represents an image which is
-	 *	seen on the main menu when the user hovers over a 
-	 *	certain menu option (MenuButton).
+	 *	This DisplayObject displays an image in an interactive way, it is 
+	 *	used in the main menu section of the game. 
 	 *	@param {Array<createjs.Bitmap>} arrImages The array of all of the images to display. 
 	 *	@param {Array<String>} arrTexts The texts that are displayed appropriately to each image. 
 	 *	@param {createjs.SpriteSheet} annoyanceSS The spritesheet reference whenever the image is switched. 

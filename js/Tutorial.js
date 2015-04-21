@@ -1,7 +1,7 @@
 (function(){
 	/**
 	 * This is a DisplayObject which is used during 
-	 * the "tutorial mode" in the game. It's consisted of a message, which explains a certain portion 
+	 * the tutorial section of the game. It's consisted of a message, which explains a certain portion 
 	 * of the game, and a tutorialID which uniquely indentifies a tutorial. 
 	 * @param {String} tutorialID    Uniqely indentifies a particular tutorial. 
 	 * @param {String} message       The message to be displayed. 

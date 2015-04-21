@@ -1,7 +1,6 @@
 (function(){
 	/**
-	*	This is the animation which simulates computer-ish-ly typed
-	*	text onto the screen.
+	*	This DisplayObject represents a text which is dinamically "typed" on the canvas. 
 	*	@param {createjs.Point} point 			The coordinates of the text.
 	*	@param {String} sent 					The sentence to be displayed.
 	*	@param {Double} textSize				The size of the font.

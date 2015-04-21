@@ -8,7 +8,7 @@ if(typeof Math.randomInt === 'undefined')
 
 (function(){
 	/**
-	 *	Menu panels are used to display some menu-related content. They are also composed of MenuParticles. 
+	 *	MenuPanels are composed of a certain number of MenuParticles. 
 	 *	@param {createjs.Point} point 		The panel's coordinates.
 	 *	@param {Double} width 				The width of the panel.
 	 *	@param {Double} height 				The height of the panel.
@@ -23,6 +23,7 @@ if(typeof Math.randomInt === 'undefined')
 	 *	@param {Integer} rotationDecrAmount For what amount should the rotation of each individual MenuParticle be decreased.  
 	 *	@param {Boolean} automaticallyStart	True if we want the panel to be automatically constructed. False if we want to manually start constructing the panel.
 	 *	@author Roman Pusec
+	 *	@see MenuParticle
 	 *	@augments {createjs.Container}
 	 */
 	function MenuPanel(point, width, height, particleXAmount, particleYAmount, color, rotationAmount, appearDelay, mpAlpha, borderColor, strokeStyle, rotationDecrAmount, automaticallyStart){
