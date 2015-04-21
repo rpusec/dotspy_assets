@@ -1,12 +1,12 @@
 (function(){
 	/**
-	 *	This DisplayObject displays an image in an interactive way, it is 
-	 *	used in the main menu section of the game. 
-	 *	@param {Array<createjs.Bitmap>} arrImages The array of all of the images to display. 
-	 *	@param {Array<String>} arrTexts The texts that are displayed appropriately to each image. 
-	 *	@param {createjs.SpriteSheet} annoyanceSS The spritesheet reference whenever the image is switched. 
-	 *	@author Roman Pusec 
-	 *	@augments {createjs.Container}
+	 * This DisplayObject displays an image in an interactive way, it is 
+	 * used in the main menu section of the game. 
+	 * @param {Array<createjs.Bitmap>} arrImages The array of all of the images to display. 
+	 * @param {Array<String>} arrTexts The texts that are displayed appropriately to each image. 
+	 * @param {createjs.SpriteSheet} annoyanceSS The spritesheet reference whenever the image is switched. 
+	 * @author Roman Pusec 
+	 * @augments {createjs.Container}
 	 */
 	function MenuOptionDisplayImg(arrImages, arrTexts, annoyanceSS){
 		this.Container_constructor();

@@ -8,38 +8,38 @@ if(typeof Math.randomInt === 'undefined')
 
 (function(){
 	/** 
-	 *	MenuFrames are used to provide the same interface as MenuPanels,
-	 *	but with additional components such as text, tabs, images, as well as borders.
+	 * MenuFrames are used to provide the same interface as MenuPanels,
+	 * but with additional components such as text, tabs, images, as well as borders.
 	 *	
-	 *	The first parameter is responsible for providing all of the necessary
-	 *	information regarding the frame itself. It is an array which is consisted
-	 *	of Objects that have the following attributes: content and tabName.
+	 * The first parameter is responsible for providing all of the necessary
+	 * information regarding the frame itself. It is an array which is consisted
+	 * of Objects that have the following attributes: content and tabName.
 	 *
-	 *	content => Contains the content to be displayed when clicking the tab (text, bitmaps, etc...)
-	 *	tabName => The name of the tab as well as the text to be displayed in the specified tab button. 
+	 * content => Contains the content to be displayed when clicking the tab (text, bitmaps, etc...)
+	 * tabName => The name of the tab as well as the text to be displayed in the specified tab button. 
 	 *
-	 *	Example: 
-	 *	var menuFrame = new MenuFrame([
-	 *	{
-	 *		content: ['this is the first sentence of tab 1', 'second sentence...'],
+	 * Example: 
+	 * var menuFrame = new MenuFrame([
+	 * {
+	 *      content: ['this is the first sentence of tab 1', 'second sentence...'],
 	 *		tabName: "tab1"
-	 *	}
+	 * }
 	 *	
-	 *	...
+	 * ...
 	 *	
-	 *	{
- 	 *		content: ['this is the first sentence of tab N', 'second sentence...'],
-	 *		tabName: "tabN"
-	 *	}
-	 *	]);
+	 * {
+ 	 * 		content: ['this is the first sentence of tab N', 'second sentence...'],
+	 *    	tabName: "tabN"
+	 * }
+	 * ]);
 	 *	
-	 *	@param {Array<Object>} menuFrameInfo 	The information about the MenuFrame.
-	 *	@param {String} frameTitle				The title of the frame. 
-	 *	@param {String} textPadding 			The padding of the overall text. 
-	 *	@param {Object} options 				Options for setting the width, background color, etc. (Check MenuPanel documentation)
-	 *	@param {Object} mfTabOptions 			Options relating to the menu tabs. (Check MFTabButton documentation)
-	 *	@author Roman Pusec 
-	 *	@augments {MenuPanel}
+	 * @param {Array<Object>} menuFrameInfo 	The information about the MenuFrame.
+	 * @param {String} frameTitle				The title of the frame. 
+	 * @param {String} textPadding 			The padding of the overall text. 
+	 * @param {Object} options 				Options for setting the width, background color, etc. (Check MenuPanel documentation)
+	 * @param {Object} mfTabOptions 			Options relating to the menu tabs. (Check MFTabButton documentation)
+	 * @author Roman Pusec 
+	 * @augments {MenuPanel}
 	 */
 	function MenuFrame(menuFrameInfo, frameTitle, textPadding, options, mfTabOptions){
 		this.MenuPanel_constructor(

@@ -1,18 +1,18 @@
 (function(){
 	/**
-	*	This DisplayObject represents a text which is dinamically "typed" on the canvas. 
-	*	@param {createjs.Point} point 			The coordinates of the text.
-	*	@param {String} sent 					The sentence to be displayed.
-	*	@param {Double} textSize				The size of the font.
-	*	@param {HTML Color} color				The color of the font. 
-	*	@param {String} font					The type of the font, eg Arial.
-	*	@param {Integer} textBlinkingAmount		Number of times the "_" sign should blink. 
-	*	@param {Double} blinkingDelay			How fast should the "_" sign blink.
-	*	@param {Double} typingDelay				How fast should the font appear.
-	*	@example new TypedText(new createjs.Point(30, 30), "Hello World", 30, "#fff", "Arial", 10, 250, 50);
-	*	@author Roman Pusec
-	*	@augments {createjs.Text}
-	*/
+	 * This DisplayObject represents a text which is dinamically "typed" on the canvas. 
+	 * @param {createjs.Point} point 			The coordinates of the text.
+	 * @param {String} sent 					The sentence to be displayed.
+	 * @param {Double} textSize				The size of the font.
+	 * @param {HTML Color} color				The color of the font. 
+	 * @param {String} font					The type of the font, eg Arial.
+	 * @param {Integer} textBlinkingAmount		Number of times the "_" sign should blink. 
+	 * @param {Double} blinkingDelay			How fast should the "_" sign blink.
+	 * @param {Double} typingDelay				How fast should the font appear.
+	 * @example new TypedText(new createjs.Point(30, 30), "Hello World", 30, "#fff", "Arial", 10, 250, 50);
+	 * @author Roman Pusec
+	 * @augments {createjs.Text}
+	 */
 	function TypedText(point, sent, textSize, color, font, textBlinkingAmount, blinkingDelay, typingDelay){
 		this.Text_constructor("", textSize + "px " + font, color);
 

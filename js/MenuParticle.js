@@ -8,18 +8,18 @@ if(typeof Math.randomInt === 'undefined')
 
 (function(){
 	/**
-	 *	Represents an animated "block" of a menu panel. 
-	 *	@param {createjs.Point} point 		The coordinates of the particle.
-	 *	@param {Integer} width				The width of the particle. 
-	 *	@param {Integer} height				The height of the particle.
-	 * 	@param {String} color 				The color of the particle.
-	 *	@param {Integer} rotationAmount		Defines how much should the particle be rotated at the beginning. 
-	 *	@param {Milliseconds} delay			The delay in milliseconds of the particle's display. If the delay is 1000, it would take one minute for the particle to display itself. 
-	 *	@param {Double, [0, 1]}				The maximum alpha value for the MenuParticle.
-	 *	@param {String}	borderColor			The color of the border of the MenuParticle. 
-	 *	@param {Integer} strokeStyle 		The thickness of the border. 
-	 *	@author Roman Pusec
-	 *	@augments {createjs.Shape}
+	 * Represents an animated "block" of a menu panel. 
+	 * @param {createjs.Point} point 		The coordinates of the particle.
+	 * @param {Integer} width				The width of the particle. 
+	 * @param {Integer} height				The height of the particle.
+	 * @param {String} color 				The color of the particle.
+	 * @param {Integer} rotationAmount		Defines how much should the particle be rotated at the beginning. 
+	 * @param {Milliseconds} delay			The delay in milliseconds of the particle's display. If the delay is 1000, it would take one minute for the particle to display itself. 
+	 * @param {Double, [0, 1]}				The maximum alpha value for the MenuParticle.
+	 * @param {String}	borderColor			The color of the border of the MenuParticle. 
+	 * @param {Integer} strokeStyle 		The thickness of the border. 
+	 * @author Roman Pusec
+	 * @augments {createjs.Shape}
 	 */
 	function MenuParticle(point, width, height, color, rotationAmount, delay, mpAlpha, borderColor, strokeStyle, rotationDecrAmount){
 		this.Shape_constructor();

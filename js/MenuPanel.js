@@ -8,23 +8,23 @@ if(typeof Math.randomInt === 'undefined')
 
 (function(){
 	/**
-	 *	MenuPanels are composed of a certain number of MenuParticles. 
-	 *	@param {createjs.Point} point 		The panel's coordinates.
-	 *	@param {Double} width 				The width of the panel.
-	 *	@param {Double} height 				The height of the panel.
-	 *	@param {Integer} particleXAmount	The amount of MenuParticles from the X coordinate, that is, the amount of columns. 
-	 *	@param {Integer} particleYAmount	The amount of MenuParticles from the Y coordinate, that is, the amount of rows.
-	 *	@param {Color/Array} color 			The color(s) of each MenuParticle. If specified as an array of colors, each next MenuParticle will have the next color in the array.
-	 *	@param {Integer} rotationAmount		Defines how much should each MenuParticle be rotated at the beginning of its display. 
-	 *	@param {Milliseconds} appearDelay	The display delay in milliseconds of each second MenuParticle.
-	 *	@param {Double, [0, 1]}	mpAlpha		The maximum alpha value for the MenuParticle.
-	 *	@param {String}	borderColor			The color of the border of the MenuParticle. 
-	 *	@param {Integer} strokeStyle 		The thickness of the border. 
-	 *	@param {Integer} rotationDecrAmount For what amount should the rotation of each individual MenuParticle be decreased.  
-	 *	@param {Boolean} automaticallyStart	True if we want the panel to be automatically constructed. False if we want to manually start constructing the panel.
-	 *	@author Roman Pusec
-	 *	@see MenuParticle
-	 *	@augments {createjs.Container}
+	 * MenuPanels are composed of a certain number of MenuParticles. 
+	 * @param {createjs.Point} point 		The panel's coordinates.
+	 * @param {Double} width 				The width of the panel.
+	 * @param {Double} height 				The height of the panel.
+	 * @param {Integer} particleXAmount	The amount of MenuParticles from the X coordinate, that is, the amount of columns. 
+	 * @param {Integer} particleYAmount	The amount of MenuParticles from the Y coordinate, that is, the amount of rows.
+	 * @param {Color/Array} color 			The color(s) of each MenuParticle. If specified as an array of colors, each next MenuParticle will have the next color in the array.
+	 * @param {Integer} rotationAmount		Defines how much should each MenuParticle be rotated at the beginning of its display. 
+	 * @param {Milliseconds} appearDelay	The display delay in milliseconds of each second MenuParticle.
+	 * @param {Double, [0, 1]}	mpAlpha		The maximum alpha value for the MenuParticle.
+	 * @param {String}	borderColor			The color of the border of the MenuParticle. 
+	 * @param {Integer} strokeStyle 		The thickness of the border. 
+	 * @param {Integer} rotationDecrAmount For what amount should the rotation of each individual MenuParticle be decreased.  
+	 * @param {Boolean} automaticallyStart	True if we want the panel to be automatically constructed. False if we want to manually start constructing the panel.
+	 * @author Roman Pusec
+	 * @see MenuParticle
+	 * @augments {createjs.Container}
 	 */
 	function MenuPanel(point, width, height, particleXAmount, particleYAmount, color, rotationAmount, appearDelay, mpAlpha, borderColor, strokeStyle, rotationDecrAmount, automaticallyStart){
 		this.Container_constructor();
