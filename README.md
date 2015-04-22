@@ -8,7 +8,7 @@ TypedText
 
 These objects represent a text which is automatically typed on the screen. Below you can see a brief example.
 
-TODO: Add GIF
+![](https://github.com/rpusec/dotspy_assets/blob/master/ds_assets_gifs/typedtexts.gif?raw=true)
 
 A code example of how to create a TypedText:
 
@@ -26,7 +26,7 @@ CheckBox
 
 CheckBox is a DisplayObject which represents checked and unchecked state. 
 
-TODO: Add GIF
+![](https://github.com/rpusec/dotspy_assets/blob/master/ds_assets_gifs/checkbox.gif?raw=true)
 
 As you can see in the above example, when the checkbox is 'checked', the background of the <body> tag is assigned a random color. When it is unchecked, it is assigned white background color. Below is a code example of how that can be done:
 
@@ -56,15 +56,15 @@ All of the menu components in the game are as follows: MenuParticle, MenuPanel, 
 
 **MenuParticle** is a components which is basically an animated rectangle. 
 
-TODO: Add a GIF
+![](https://github.com/rpusec/dotspy_assets/blob/master/ds_assets_gifs/mparticle.gif?raw=true)
 
 **MenuPanel** is a 'container' which is consisted of a number of **MenuParticle** objects. 
 
-TODO: Add a GIF
+![](https://github.com/rpusec/dotspy_assets/blob/master/ds_assets_gifs/mpanel.gif?raw=true)
 
 **MenuFrame** is a frame which extends MenuPanel and provides additional components, such as tabs, text, etc.
 
-TODO: Add a GIF
+![](https://github.com/rpusec/dotspy_assets/blob/master/ds_assets_gifs/mframe.gif?raw=true)
 
 Code example can be seen in the `menu_comps.html` file. 
 
@@ -73,7 +73,7 @@ MenuOptionDisplayImg
 
 This object is basically a slideshow of images with a transition between each images. 
 
-TODO: Add GIF
+![](https://github.com/rpusec/dotspy_assets/blob/master/ds_assets_gifs/displImage.gif?raw=true)
 
 See the displayimg.html page for more info. 
 
@@ -88,7 +88,7 @@ The **TutorialFactory** object is used to manage, prepare, and create Tutorials 
 
 Below you can see a brief example of preloaded and displayed Tutorial objects. 
 
-TODO: Add GIF
+![](https://github.com/rpusec/dotspy_assets/blob/master/ds_assets_gifs/tutorials.gif?raw=true)
 
 In order to create a new Tutorial, you use the `TutorialFactory.setNewTutorial` method. So that the tutorials can be managed directly through the TutorialFactory object. 
 
