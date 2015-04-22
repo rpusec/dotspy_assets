@@ -67,3 +67,18 @@ In order to create a new Tutorial, you use the `TutorialFactory.setNewTutorial` 
 tutorialFactory.setNewTutorial('tut_no_1', 'Aliquam id nibh ullamcorper, porttitor purus id, ornare urna. Nullam enim nibh, suscipit gravida tristique nec, tincidunt in orci.');
 tutorialFactory.setNewTutorial('tut_no_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
 ```
+
+This is how you prepare tutorials. Preparing a number of tutorials will make it possible to display these tutorials later on the screen. You need to reference the Tutorial's ID in the parameter of the `TutorialFactory.prepareTutorial` method.  
+
+```javascript
+tutorialFactory.prepareTutorial('tut_no_1');
+tutorialFactory.prepareTutorial('tut_no_2');
+```
+
+To finally display a tutorial, use the `TutorialFactory.loadNext` method. Execute the said method again to display another prepared tutorial, etc. until you run out of prepared tutorials. 
+
+```javascript
+tutorialFactory.loadNext();
+```
+
+See the `tutorial.html` file for a demo. 
