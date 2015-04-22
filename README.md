@@ -28,3 +28,22 @@ var checkbox = new CheckBox("Set random background", function(){
   textColorHover: '#00CCFF'
 });
 ```
+
+Menu Components
+----
+
+All of the menu components in the game are as follows: MenuParticle, MenuPanel, and MenuFrame. 
+
+**MenuParticle** is a components which is basically an animated rectangle. 
+
+TODO: Add a GIF
+
+**MenuPanel** is a 'container' which is consisted of a number of **MenuParticle** objects. 
+
+TODO: Add a GIF
+
+**MenuFrame** is a frame which extends MenuPanel and provides additional components, such as tabs, text, etc.
+
+TODO: Add a GIF
+
+Code example can be seen in the `menu_comps.html` file. 
