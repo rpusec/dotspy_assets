@@ -47,3 +47,23 @@ TODO: Add a GIF
 TODO: Add a GIF
 
 Code example can be seen in the `menu_comps.html` file. 
+
+Tutorial and TutorialFactory
+----
+
+The game includes a tutorial section, in which users can learn a few things about the game.  
+
+The idea was to created a **Tutorial** object, which is basically an animated `MenuPanel` and includes a `message` attribute (which is basically the content of a tutorial window/section), and a `tutorialID` attribute which uniqely indentifies a particular Tutorial. 
+
+The **TutorialFactory** object is used to manage, prepare, and create Tutorials used in the tutorial section. 
+
+Below you can see a brief example of preloaded and displayed Tutorial objects. 
+
+TODO: Add GIF
+
+In order to create a new Tutorial, you use the `TutorialFactory.setNewTutorial` method. So that the tutorials can be managed directly through the TutorialFactory object. 
+
+```javascript
+tutorialFactory.setNewTutorial('tut_no_1', 'Aliquam id nibh ullamcorper, porttitor purus id, ornare urna. Nullam enim nibh, suscipit gravida tristique nec, tincidunt in orci.');
+tutorialFactory.setNewTutorial('tut_no_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+```
