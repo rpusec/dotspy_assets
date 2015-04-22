@@ -3,6 +3,24 @@ These are some of the assets that I created for the game Dotspy.
 These assets are made using the CreateJS JavaScript library suit. 
 So in order to use these assets in your projects, load the appropriate libraries first. 
 
+TypedText
+----
+
+These objects represent a text which is automatically typed on the screen. Below you can see a brief example.
+
+TODO: Add GIF
+
+A code example of how to create a TypedText:
+
+```javascript
+var typedText = new TypedText(new createjs.Point(30, 30), "Hello World", 30, "#fff", "Arial", 10, 250, 50);
+stage.addChild(typedText);
+```
+
+In order to erase the text from the canvas, you use the `TypedText.deleteText` method. 
+
+See the `typedtext.html` page for a demo. 
+
 CheckBox
 ----
 
@@ -28,6 +46,8 @@ var checkbox = new CheckBox("Set random background", function(){
   textColorHover: '#00CCFF'
 });
 ```
+
+See the `checkbox.html` page for a demo. 
 
 Menu Components
 ----
