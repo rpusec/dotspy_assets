@@ -1,7 +1,7 @@
 # Dotspy Assets
 These are some of the assets that I created for the game [Dotspy](http://www.newgrounds.com/portal/view/655987). 
-These assets are made using the CreateJS JavaScript library suit. 
-So in order to use these assets in your projects, load the appropriate libraries first. 
+These assets are made using the [CreateJS](http://www.createjs.com/Home) library suit. 
+So in order to use these assets in your personal projects, check the documentation on CreateJS first.  
 
 TypedText
 ----
