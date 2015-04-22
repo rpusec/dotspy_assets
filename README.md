@@ -68,6 +68,15 @@ TODO: Add a GIF
 
 Code example can be seen in the `menu_comps.html` file. 
 
+MenuOptionDisplayImg
+----
+
+This object is basically a slideshow of images with a transition between each images. 
+
+TODO: Add GIF
+
+See the displayimg.html page for more info. 
+
 Tutorial and TutorialFactory
 ----
 
